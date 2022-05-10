@@ -1,3 +1,5 @@
+
+
 feature 'add bookmark' do
   scenario 'added bookmark displaying on page' do
     ('/bookmarks')

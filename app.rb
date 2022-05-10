@@ -9,12 +9,17 @@ class BookmarkManager < Sinatra::Base
   end
 
   get "/" do
-    "Bookmark Manager"
+    redirect "/bookmarks"
   end
 
   get '/bookmarks' do
     @bookmark_list = BookmarkList.all
     erb :'bookmarks/index'
+  end
+
+  post '/added' do
+    BookmarkList.add(params[:add_bookmark])
+    redirect '/bookmarks'
   end
 
   run! if app_file == $0

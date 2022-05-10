@@ -1,9 +1,11 @@
 <html>
-
+  <h1>Bookmarks:</h1>
   <ul>
   <% @bookmark_list.each do |bookmark| %>
     <li><%= bookmark %></li>
   <% end %>
 </ul>
-
+ <form action="/added" method="post">
+  <input type="text" name="add_bookmark" placeholder="Add bookmark..." >
+  <input type="submit" value="Add">
 </html>
