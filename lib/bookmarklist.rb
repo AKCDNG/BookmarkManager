@@ -10,4 +10,9 @@ class BookmarkList
     result.map { |bookmark| bookmark['url'] }
   end
 
+  def add(bookmark)
+   connection = PG.connect(dbname: 'bookmark_manager')
+   connection.exec("INSERT INTO bookmarks (url) VALUES(#{bookmark});")
+  end
+
 end
