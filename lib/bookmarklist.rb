@@ -12,7 +12,7 @@ class BookmarkList
 
   def self.add(bookmark)
    connection = PG.connect(dbname: 'bookmark_manager')
-   connection.exec("INSERT INTO bookmarks(id,url) VALUES(DEFAULT,'#{bookmark}');")
+   connection.exec("INSERT INTO bookmarks (url) VALUES('#{bookmark}');")
   end
 
 end
